@@ -10,7 +10,7 @@ const Contact= () =>{
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/v1/message/send", {
+    await axios.post("https://easy-pear-swallow-ring.cyclic.app/api/v1/message/send", {
       name,
       email,
       subject,
