@@ -19,6 +19,13 @@ app.use(cors({
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
 
+app.get("/", (req,res)=>{
+    res.json({
+        success: true,
+        message: " Hey backend has been connected",
+    })
+})
+
 app.use("/api/v1/message", messageRouter); // Mounting message router
 
 mongooseDB(); // Connection to Mongo_database
