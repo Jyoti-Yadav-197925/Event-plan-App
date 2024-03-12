@@ -38,14 +38,14 @@ export const messageSent = async (req, res) => {
         errorMessage += error.errors.message.message + " ";
       }
       return res.status(400).json({
-        success: true,
-        message: errorMessage
+        success: false,
+        message: errorMessage,
       })
     }
 
     console.error(error); // Log error to console
 
-    res.status(500).json({
+    return res.status(500).json({
       // Send error response
       success: false,
       message:
